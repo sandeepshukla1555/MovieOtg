@@ -1,0 +1,35 @@
+.carousel{
+    position: relative;
+}
+.carouselItems{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.carouselItem{
+    width: 500px;
+}
+
+.posterBlock{
+    width: 170px;
+}
+.arrow{
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    background: #ffffff61;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.carouseLeft{
+   left: 50px;
+}
+.carouseRight{
+   right: 50px;
+}
