@@ -1,14 +1,17 @@
 .carousel{
     position: relative;
+    padding: 0 16px;
 }
 .carouselItems{
     width: 100%;
-    height: 250px;
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 6px;
     overflow-y: hidden;
     overflow-x: scroll;
+}
+.carouselItems::-webkit-scrollbar {
+    display: none;
 }
 
 .carouselItem{
@@ -17,6 +20,12 @@
 
 .posterBlock{
     width: 170px;
+    background: #0c578b;
+    padding: 4px;
+    border-radius: 2px;
+}
+.posterBlock img{
+    margin-bottom: 8px;
 }
 .arrow{
     position: absolute;
@@ -32,4 +41,80 @@
 }
 .carouseRight{
    right: 50px;
+}
+.carouselInfo{
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.carouselInfo span:first-child{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+.averageBox{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.averText{
+    font-size: 12px;
+    font-weight: 300;
+    color: azure;
+}
+.averRate{
+    font-size: 12px;
+    font-weight: 800;
+    opacity: 0.8;
+}
+.carouselStar{
+    display: flex;
+    align-items: center;
+    gap:4px;
+}
+.avrageStart{
+    color:#b3a912;
+}
+.carouselSubTitle{
+    opacity: 0.6;
+}
+.posterBlock button{
+    padding: 3px 4px;
+    color: #ffffffdd;
+    font-size: 12px;
+    font-weight: 800;
+    border-radius: 30px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 32px;
+    position: relative;
+}
+.posterBlock button::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 1px;
+    width: 45px;
+    background-color: #27638d;
+}
+.posterBlock button::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 1px;
+    width: 45px;
+    background-color: #27638d;
+}
+.posterBlock button:hover{
+    opacity: 0.9;
 }

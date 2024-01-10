@@ -1,0 +1,5 @@
+.backdrop{
+    backdrop-filter: blur(2px);
+    opacity: 1;
+    background-color: #62626277;
+}
