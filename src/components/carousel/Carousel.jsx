@@ -7,6 +7,7 @@ import { CiCircleChevLeft, CiCircleChevRight } from "react-icons/ci";
 import userIcon from '../../assets/images/user.png'
 import { IoStarSharp } from "react-icons/io5";
 import CardOverview from '../popup/CardOverview';
+import CarouselShimmer from './CarouselShimmer';
 
 const Carousel = ({data, loading}) => {
     const carouseContainer=useRef();
@@ -58,8 +59,9 @@ const Carousel = ({data, loading}) => {
                            poster_path={posterUrl}
                            release_date={item.release_date} 
                            title={item.title} 
-                           average={average}
                            vote_count={item.vote_count}
+                           average={average}
+                           vote_average={item.vote_average}
                            setShow={setShow}/>
                       </div>:<></>}
                       <div className="posterBlock">
@@ -75,7 +77,7 @@ const Carousel = ({data, loading}) => {
             })
         }
       </div>
-      :<span>Loading...</span>
+      :<CarouselShimmer/>
         
       }
     </div>

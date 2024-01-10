@@ -8,7 +8,6 @@ const Home = () => {
     <div>
       <HeroBanner/>
       <Trending/>
-      <div style={{height:'1000px'}}></div>
     </div>
   )
 }
