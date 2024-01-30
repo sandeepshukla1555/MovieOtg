@@ -13,7 +13,7 @@ const SearchResult = () => {
   return (
     <div className='pt-20'>
        <ContectWrapper>
-          <h1 className='text-white font-extrabold mb-5'>Your Search Result</h1>
+          <h1 className='text-white font-extrabold mb-3'>Your Search Result</h1>
           {data?.results?.length!==0?<Carousel data={data?.results} loading={loading}/>:<NotFound/>}
        </ContectWrapper>
     </div>

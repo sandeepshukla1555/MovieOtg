@@ -10,7 +10,9 @@ const CardOverview = ({backdrop_path, overview, popularity, media_type, original
       <div className='w-[32rem] h-[23rem] bg-[#ecececd4] rounded-lg overflow-hidden relative flex'>
         <MdCancel onClick={()=>setShow(0)} className='absolute top-4 right-4 text-stone-800 font-extrabold bg-gray-300 rounded-full hover:text-red-600 hover:bg-gray-700 w-6 h-6 p-0.2 cursor-pointer'/>
         <div className='min-w-[11.5rem]'>
-           <img src={poster_path} className='w-full h-[23rem] ml-0 mr-auto' />
+           {!poster_path?<img src={poster_path} className='w-full h-[23rem] ml-0 mr-auto' />:<div type="button" className="w-40 h-80">
+                          <div className='animate-spin h-20 w-20 mx-auto border-t-8 border-x border-x-transparent border-b border-b-transparent border-t-rose-600 rounded-full'></div>
+                        </div>}
         </div>
         <div className='flex-grow mt-9 pl-4 overflow-y-auto'>
             <h4 className='text-base font-normal mb-5 line-clamp-2 mr-4'><span className='font-semibold'>Details of: </span><span className='underline underline-offset-4'>{title} {media_type} show</span></h4>

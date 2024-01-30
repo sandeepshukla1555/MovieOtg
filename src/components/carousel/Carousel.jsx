@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ContectWrapper from '../contentWrapper/ContectWrapper';
 import { CiCircleChevLeft, CiCircleChevRight } from "react-icons/ci";
-import userIcon from '../../assets/images/user.png'
 import { IoStarSharp } from "react-icons/io5";
 import CardOverview from '../popup/CardOverview';
 import CarouselShimmer from './CarouselShimmer';
@@ -33,6 +32,7 @@ const Carousel = ({data, loading}) => {
       return averageStar;
     }
 
+    
   return (
     <div className='carousel'>
       <ContectWrapper>
@@ -44,9 +44,9 @@ const Carousel = ({data, loading}) => {
       {!loading ?<div className='carouselItems'>
         {
             data?.map((item)=>{
-                const posterUrl=item.poster_path?url.poster+item.poster_path: userIcon;
-                const banner=item.backdrop_path?url.poster+item.backdrop_path: userIcon;
-                console.log(item)
+                const posterUrl=item.poster_path?url.poster+item.poster_path:false;
+                const banner=item.backdrop_path?url.poster+item.backdrop_path: 'false';
+                console.log(posterUrl)
                 return (
                     <div key={item.id} onClick={()=>{}} className="carouselItem">
                       {show===item.id ?<div style={{backgroundImage:`url(${banner})`}} className="fixed top-0 left-0 h-screen w-full z-50 bg-no-repeat bg-cover bg-center">
@@ -65,7 +65,10 @@ const Carousel = ({data, loading}) => {
                            setShow={setShow}/>
                       </div>:<></>}
                       <div className="posterBlock">
-                        <img src={posterUrl}/>
+                        {/* <img src={posterUrl} onLoad={item.handleLoad}/> */}
+                        {posterUrl!==false?<ProgressiveImg src={posterUrl} placeholderSrc={posterUrl} height="283"/>:<div type="button" className="w-40 h-56">
+                          <div className='animate-spin h-20 w-20 mx-auto border-t-8 border-x border-x-transparent border-b border-b-transparent border-t-rose-600 rounded-full mt-8'></div>
+                        </div>}
                         <div className='carouselInfo'>
                           <span className='carouselSubTitle'>{item.title}</span>
                           <span className='averageBox'><span className='averText'>Avr:- <span className='averRate'>5</span></span><span className='carouselStar'>{average(item.vote_average).map((item)=><span className='avrageStart'><IoStarSharp key={item*2}/></span>)}</span></span>
@@ -82,6 +85,20 @@ const Carousel = ({data, loading}) => {
       }
     </div>
   )
+  
 }
 
+
+
 export default Carousel
+
+
+const ProgressiveImg = ({ placeholderSrc, src, ...props }) => {
+  return (
+    <img
+      {...{ src: placeholderSrc, ...props }}
+      alt={props.alt || ""}
+      className="image"
+    />
+  );
+};
