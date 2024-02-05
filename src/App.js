@@ -12,6 +12,7 @@ import Footer from './components/footer/Footer'
 import Explore from './pages/explore/Explore'
 import PageNotFound from './pages/404/PageNotFound'
 import SearchResult from './pages/searchReasult/SearchResult'
+import AboutDeveloper from './pages/About/AboutDeveloper';
 
 function App() {  
   const dispatch=useDispatch()
@@ -39,6 +40,7 @@ function App() {
          <Route path='/:mediaType/:id' element={<Details/>}/>
          <Route path='/search/:query' element={<SearchResult/>}/>
          <Route path='/explore/:mediaType' element={<Explore/>}/>
+         <Route path='/aboutdeveloper' element={<AboutDeveloper/>}/>
          <Route path='*' element={<PageNotFound/>}/> 
       </Routes>
       <Footer/>  

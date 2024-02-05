@@ -59,10 +59,14 @@ const navigationHandler=(type)=>{
   {
     navigate('/explore/movie');
   }
-  else
+  else if(type==="tv")
   {
     navigate('/explore/tv')
   }
+  else{
+    navigate('/aboutdeveloper')
+  }
+  
   setMobileMenu(false)
 }
 
@@ -76,9 +80,10 @@ const navigationHandler=(type)=>{
           <RiMovie2Line className='brand'/> MovieOTG
          </div>
          <ul className={`${mobileMenu?'mobilemenuItem':'none'} menuItem`}>
-          <li className="items" onClick={()=>navigationHandler('movie')}>Movies</li>
-          <li className="items" onClick={()=>navigationHandler('tv')}>TV Shows</li>
-          <li className="items none">
+          <li className="items hover:opacity-80" onClick={()=>navigationHandler('movie')}>Movies</li>
+          <li className="items hover:opacity-80" onClick={()=>navigationHandler('tv')}>TV Shows</li>
+          <li className='items hover:opacity-80' onClick={()=>navigationHandler('aboutdeveloper')}>About Developer</li>
+          <li className="items none  hover:opacity-80">
              <FaSearch/>
           </li>
          </ul>
