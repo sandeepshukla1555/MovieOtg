@@ -1,13 +1,14 @@
 import React from 'react'
-import { MdSmsFailed } from "react-icons/md";
+import { Player } from '@lottiefiles/react-lottie-player';
+import NotMatch from './NotMatch.json'
 
 
 const NotFound = () => {
   return (
-    <div className='h-[80vh] w-full bg-stone-800 flex justify-center items-center text-white text-5xl font-semibold'>
-       <div>
-          <MdSmsFailed className='text-[20rem]'/>
-          <h1 className='text-center'>Not Found!</h1>
+    <div className='h-[80vh] w-full bg-black flex justify-center items-center text-white text-5xl font-semibold'>
+       <div id='notfounded'>
+          <Player src={NotMatch} className="player" loop
+  autoplay/>
        </div>
     </div>
   )

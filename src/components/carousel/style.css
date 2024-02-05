@@ -19,7 +19,7 @@
 
 .posterBlock{
     width: 170px;
-    background: #0c578b;
+    background: linear-gradient(0deg, black, #1b1b1b);
     padding: 4px;
     border-radius: 2px;
 }
@@ -126,14 +126,14 @@
     animation-timing-function: linear;
     animation-direction: alternate;
     animation-iteration-count: infinite;
-    @apply bg-zinc-400;
+    @apply bg-zinc-900;
 }
 
 @keyframes shimmer{
     0%{
-        @apply bg-gray-300;
+        @apply bg-zinc-900;
     }
     100%{
-        @apply bg-gray-700
+        @apply bg-zinc-950
     }
 }

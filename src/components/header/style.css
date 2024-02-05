@@ -56,7 +56,7 @@
 }
 
 .searchInput{
-    margin-top: 60px;
+    @apply mt-9 md:mt-16;
 }
 
 .heroBannerContent{
